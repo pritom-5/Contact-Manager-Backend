@@ -37,7 +37,13 @@ const postContact = asyncHandler(async (req, res) => {
     phone,
   });
   // create new document in scema
-  res.status(200).json({ message: "contact added", returnedContact });
+  res
+    .status(200)
+    .json({
+      message: `${name} added to the contact`,
+      returnedContact,
+      status: 200,
+    });
 });
 
 module.exports = postContact;
