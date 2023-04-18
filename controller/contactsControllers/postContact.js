@@ -14,9 +14,6 @@ const postContact = asyncHandler(async (req, res) => {
   // get data from req.body
   const { name, email, phone } = req.body;
 
-  // //////
-  // console.log(user_id, name, email, phone);
-
   // check: all fileds are filled
   if (
     !name ||
@@ -37,13 +34,11 @@ const postContact = asyncHandler(async (req, res) => {
     phone,
   });
   // create new document in scema
-  res
-    .status(200)
-    .json({
-      message: `${name} added to the contact`,
-      returnedContact,
-      status: 200,
-    });
+  res.status(200).json({
+    message: `${name} added to the contact`,
+    returnedContact,
+    status: 200,
+  });
 });
 
 module.exports = postContact;

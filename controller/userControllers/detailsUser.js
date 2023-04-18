@@ -10,7 +10,7 @@ const detailsUser = asynchandler(async (req, res) => {
   const id = req.user;
   try {
     const userInfo = await userModel.findOne({ _id: id });
-    console.log(userInfo);
+
     const { username, email } = userInfo;
     res.status(200).json({
       message: "user details",

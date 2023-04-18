@@ -12,9 +12,6 @@ const loginUser = asynchandler(async (req, res) => {
   // get items from req.body
   const { username, password } = req.body;
 
-  //////
-  console.log(req.body);
-
   // check: all fields are not available -> 400
   if (!username || !password) {
     res.status(401);
