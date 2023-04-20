@@ -24,7 +24,9 @@ const editContact = asyncHandler(async (req, res) => {
       },
       { new: true }
     );
-    res.status(200).json(returnedContact);
+    res
+      .status(200)
+      .json({ message: `${name} updated`, status: 200, returnedContact });
   } catch (error) {
     res.status(400);
     throw new Error(error.message || "Can't find the contact");
