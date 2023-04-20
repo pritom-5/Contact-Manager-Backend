@@ -1,3 +1,6 @@
+// configure env
+require("dotenv").config();
+
 // require express
 const express = require("express");
 const connectDb = require("./configDb/db");
@@ -7,9 +10,6 @@ const cors = require("cors");
 // app
 const app = express();
 
-// configure env
-require("dotenv").config();
-
 // cors
 app.use(
   cors({
@@ -17,8 +17,6 @@ app.use(
     credentials: true,
   })
 );
-
-connectDb();
 
 // port
 const port = process.env.PORT || 5000;
@@ -32,10 +30,21 @@ app.use("/api/users", require("./routes/userRoutes"));
 // /api/contacts -> require contacts
 app.use("/api/contacts", require("./routes/contactsRoutes"));
 
+// test /api/hello
+app.get("/api/hello", (req, res) => res.status(200).send("hello"));
+
 // error handler middleware
 app.use(errorHandler);
 
 // listen to server
-app.listen(port, () => {
-  console.log(`listening to port: ${port}`);
-});
+const connect = async () => {
+  try {
+    await connectDb();
+    app.listen(port, () => {
+      console.log(`listening to port: ${port}`);
+    });
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+connect();
