@@ -6,6 +6,7 @@ const express = require("express");
 const connectDb = require("./configDb/db");
 const errorHandler = require("./middleware/errorHandler");
 const cors = require("cors");
+const path = require("path");
 
 // app
 const app = express();
@@ -20,6 +21,8 @@ app.use(
 
 // port
 const port = process.env.PORT || 5000;
+
+app.use(express.static(path.join(__dirname, "dist")));
 
 // json() to all routes -> read from req
 app.use(express.json());
