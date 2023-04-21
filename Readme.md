@@ -10,8 +10,8 @@ This app is the backend part of the Contacts-manager app.
 
 | Desc                    | LINK                                                                                                       |
 | ----------------------- | ---------------------------------------------------------------------------------------------------------- |
-| Backend API Live link   | [contacts-manager-api](https://contact-manager-fullstack.onrender.com)                                     |
-| Full stack website demo | [contacts-manager-full-stack-app](https://contact-manager-frontend-g6mn68y2x-pritom-5.vercel.app/contacts) |
+| Backend API Live link   | [contacts-manager-api](https://contact-manager-fullstack.onrender.com/api/hello)                                     |
+| Full stack website demo | [contacts-manager-full-stack-app](https://contact-manager-frontend-g6mn68y2x-pritom-5.vercel.app) |
 
 <br/>
 
